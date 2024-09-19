@@ -37,8 +37,8 @@ function App() {
           if (e[0] == "#") {
             e = e.slice(1);
             return (
-              <h1 key={i} className="loading">
-                &nbsp;&nbsp;&nbsp;{e}
+              <h1 key={i} className="loading" style={{ fontWeight: "bold" }}>
+                {e}
               </h1>
             );
           }
