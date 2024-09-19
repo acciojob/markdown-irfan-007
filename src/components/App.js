@@ -12,6 +12,7 @@ function App() {
   }, [text]);
   return (
     <div
+      className="app"
       style={{
         display: "grid",
         height: "100vh",
