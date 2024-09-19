@@ -36,10 +36,14 @@ function App() {
           let sty = {};
           if (e[0] == "#") {
             e = e.slice(1);
-            sty = { fontWeight: "bold" };
+            return (
+              <h1 key={i} className="loading">
+                {e}
+              </h1>
+            );
           }
           return (
-            <div key={i} className="loading" style={sty}>
+            <div key={i} className="loading">
               {e}
             </div>
           );
