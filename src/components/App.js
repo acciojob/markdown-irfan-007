@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [text, setText] = useState(``);
-  const [markDown, setMarkDown] = useState([]);
+  const [text, setText] = useState("");
+  const [lines, setLines] = useState([]);
+  // const [markDown, setMarkDown] = useState([]);
 
-  useEffect(() => {
-    const addToMarkDown = () => {
-      setMarkDown([...markDown, text]);
-    };
-    addToMarkDown();
-  }, [text]);
+  // useEffect(() => {
+  //   const addToMarkDown = () => {
+  //     setMarkDown([...markDown, text]);
+  //   };
+  //   addToMarkDown();
+  // }, [text]);
   return (
     <div
       className="app"
@@ -24,22 +25,25 @@ function App() {
       <textarea
         onChange={(e) => {
           setText(e.target.value);
+          setLines(text.split("\n"));
         }}
+        value={text}
         style={{ padding: "1rem", backgroundColor: "#CCCCCC" }}
         className="textarea"
       ></textarea>
       <div style={{ padding: "1rem" }} className="preview">
-        <textarea
-          readOnly
-          value={text}
-          className="loading"
-          style={{
-            fontWeight: "bold",
-            height: "100%",
-            width: "100%",
-            resize: "none",
-          }}
-        ></textarea>
+        {lines.map((e, i) => {
+          let sty = {};
+          if (e[0] == "#") {
+            e = e.slice(1);
+            sty = { fontWeight: "bold" };
+          }
+          return (
+            <div key={i} className="loading" style={sty}>
+              {e}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
