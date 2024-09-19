@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState(``);
   const [markDown, setMarkDown] = useState([]);
 
   useEffect(() => {
@@ -29,9 +29,17 @@ function App() {
         className="textarea"
       ></textarea>
       <div style={{ padding: "1rem" }} className="preview">
-        <h1 className="loading" style={{ fontWeight: "bold" }}>
-          {text}
-        </h1>
+        <textarea
+          readOnly
+          value={text}
+          className="loading"
+          style={{
+            fontWeight: "bold",
+            height: "100%",
+            width: "100%",
+            resize: "none",
+          }}
+        ></textarea>
       </div>
     </div>
   );
