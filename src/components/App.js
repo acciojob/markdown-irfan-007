@@ -31,7 +31,9 @@ function App() {
         #hellooo
       </textarea>
       <div style={{ padding: "1rem" }} className="preview">
-        <h1 className="loading">{text}</h1>
+        <h1 className="loading" style={{ fontWeight: "bold" }}>
+          {text.slice(1)}
+        </h1>
       </div>
     </div>
   );
