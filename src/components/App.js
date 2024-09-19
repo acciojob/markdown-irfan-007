@@ -38,7 +38,7 @@ function App() {
             e = e.slice(1);
             return (
               <h1 key={i} className="loading">
-                &nbsp;&nbsp;{e}
+                &nbsp;&nbsp;&nbsp;{e}
               </h1>
             );
           }
