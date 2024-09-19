@@ -26,7 +26,7 @@ function App() {
         onChange={(e) => {
           setText(e.target.value);
           setLines(text.split("\n"));
-          console.log(text, lines);
+          // console.log(text, lines);
         }}
         value={text}
         style={{ padding: "1rem", backgroundColor: "#CCCCCC" }}
@@ -34,12 +34,11 @@ function App() {
       ></textarea>
       <div style={{ padding: "1rem" }} className="preview">
         {lines.map((e, i) => {
-          let sty = {};
           if (e[0] == "#") {
             e = e.slice(1);
             return (
               <h1 key={i} className="loading">
-                &nbsp;{e}
+                &nbsp;&nbsp;{e}
               </h1>
             );
           }
