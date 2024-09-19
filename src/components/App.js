@@ -26,6 +26,7 @@ function App() {
         onChange={(e) => {
           setText(e.target.value);
           setLines(text.split("\n"));
+          console.log(text, lines);
         }}
         value={text}
         style={{ padding: "1rem", backgroundColor: "#CCCCCC" }}
@@ -38,7 +39,7 @@ function App() {
             e = e.slice(1);
             return (
               <h1 key={i} className="loading">
-                {e}
+                &nbsp;{e}
               </h1>
             );
           }
