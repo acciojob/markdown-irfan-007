@@ -38,7 +38,7 @@ function App() {
             e = e.slice(1);
             return (
               <h1 key={i} className="loading" style={{ fontWeight: "bold" }}>
-                {e}
+                {e.trim()}
               </h1>
             );
           }
